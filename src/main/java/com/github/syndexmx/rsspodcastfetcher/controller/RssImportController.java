@@ -22,6 +22,7 @@ public class RssImportController {
     public String showImportRSSPage(@RequestParam String url, Model model){
         String rssText = RssFetcher.getPage(url);
         List<PodcastUrl> listOfUrls = rssParser.parseRss(rssText);
+        model.addAttribute("channelname", url);
         model.addAttribute("podcastlist", listOfUrls);
         return "parsedrss";
     }

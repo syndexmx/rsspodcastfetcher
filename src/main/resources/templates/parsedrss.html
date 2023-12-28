@@ -7,23 +7,49 @@
 </head>
 <body>
 
-<h2>   RSS-подкаст-треккер     </h2>
 <div>
     <table>
-        <tr th:each="podcast : ${podcastlist}">
-            <td>
-                <form action="/acquire" method="GET" target="downloadwindow">
-                    <p>
-                        <button> Получить подкаст </button>
-                        <span th:text="${podcast.title}"/>
-                    </p>
-                    <p>
-                        <span th:text="${podcast.date}"/>
-                        <input th:value="${podcast.url}" name="url" class="noinput">
-                    </p>
-                </form>
+        <tr>
+            <td class="fixed">
+            </td>
+            <td colspan="2" class="centered">
+                <h2 class="centered">   Подкасты выбранного канала     </h2>
+                <span th:text="${channelname}"/>
+            </td>
+            <td class="fixed">
             </td>
         </tr>
+        <tr><td></td><td colspan="2"><hr></td></tr>
+
+        <tr th:each="podcast : ${podcastlist}">
+            <form action="/acquire" method="GET" target="downloadwindow">
+                <td>
+
+                </td>
+                <td>
+                    <p>
+                        <h3><span th:text="${podcast.title}"/></h3>
+                    </p>
+                    <p>
+                        <span th:text="${podcast.description}"/>
+                    </p>
+                    <p>
+                        <button> Получить подкаст </button>
+                        <span th:text="${podcast.date}"/>
+                    </p>
+                    <p>
+                        <hr>
+                    </p>
+
+                </td>
+                <td>
+                    <input th:value="${podcast.url}" name="url" class="noinput">
+                </td>
+                <td>
+                </td>
+            </form>
+        </tr>
+
     </table>
 
 </div>
