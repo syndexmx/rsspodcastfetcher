@@ -31,7 +31,16 @@
                         <h3><span th:text="${podcast.title}"/></h3>
                     </p>
                     <p>
-                        <span th:text="${podcast.description}"/>
+                            <table>
+                            <tr>
+                                <td class="fixed"></td>
+                                <td>
+                                    <span th:text="${podcast.description}"/>
+                                </td>
+                                <td class="fixed"></td>
+                            </tr>
+                            </table>
+
                     </p>
                     <p>
                         <button> Получить подкаст </button>
