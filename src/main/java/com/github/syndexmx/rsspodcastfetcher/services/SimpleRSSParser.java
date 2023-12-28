@@ -37,6 +37,10 @@ public class SimpleRSSParser implements RSSParser {
         title = title.replace('<','_')
                 .replace('>','_')
                 .replace('"','*');
+        if (title.contains("[") && title.contains("]")){
+            title = title.substring(title.lastIndexOf("[")+1);
+            title = title.substring(0,title.lastIndexOf("]"));
+        }
         return title;
     }
 
