@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.github.syndexmx.rsspodcastfetcher.dto.PodcastUrl.DESCRIPTION_LENGTH_LIMIT;
+
 @Component
 public class SimpleRSSParser implements RSSParser {
 
@@ -23,8 +25,9 @@ public class SimpleRSSParser implements RSSParser {
                 String title = getTitleFromBlock(aBlock);
                 String link = getUrlFromBlock(aBlock);
                 String date = getDateFromBlock(aBlock);
+                String description = getDescriptionFromBlock(aBlock);
 
-                outList.add(new PodcastUrl(link, title, date));
+                outList.add(new PodcastUrl(link, title, date, description));
             }
             text = text.substring(text.indexOf("</item>")+7);
         }
@@ -39,9 +42,27 @@ public class SimpleRSSParser implements RSSParser {
                 .replace('"','*');
         if (title.contains("[") && title.contains("]")){
             title = title.substring(title.lastIndexOf("[")+1);
-            title = title.substring(0,title.lastIndexOf("]"));
+            title = title.substring(0,title.indexOf("]"));
         }
         return title;
+    }
+
+    private String getDescriptionFromBlock(String aBlock){
+        if (!aBlock.contains("<description>") | !aBlock.contains("<description>"))
+            return "";
+        String description = aBlock.substring(aBlock.indexOf("<description>")+12);
+        description = description.substring(0, description.indexOf("</description>"));
+        description = description.replace('"','*');
+        description = description.replace("<p>","\n");
+        description = description.replace("</p>","\n");
+        if (description.contains("[") && description.contains("]")){
+            description = description.substring(description.lastIndexOf("[")+1);
+            description = description.substring(0,description.indexOf("]"));
+        }
+        if (description.length()>PodcastUrl.DESCRIPTION_LENGTH_LIMIT){
+            description = description.substring(0,DESCRIPTION_LENGTH_LIMIT) + " ... ...";
+        }
+        return description;
     }
 
     private String getUrlFromBlock(String aBlock){

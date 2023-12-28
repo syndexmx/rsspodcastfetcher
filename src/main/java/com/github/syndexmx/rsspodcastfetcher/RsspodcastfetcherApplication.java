@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RsspodcastfetcherApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(RsspodcastfetcherApplication.class, args);
+		System.out.println("***  RSS-podcast fetcher service is on-line  ***");
 	}
 
 }
