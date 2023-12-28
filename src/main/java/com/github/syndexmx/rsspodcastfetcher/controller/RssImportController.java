@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping
+@RequestMapping( produces = "text/html; charset=utf-8")
 public class RssImportController {
 
     @Autowired
