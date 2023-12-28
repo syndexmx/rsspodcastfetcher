@@ -2,29 +2,55 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Скачивание подкаста</title>
+    <title>Получение RSS</title>
     <link th:href="@{/styles/main.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<h2>   Скачивание подкаста     </h2>
 <div>
-    <p>
-        <span th:text = "${filename}"/>
+    <table>
+        <tr>
+            <td class="fixed">
+            </td>
+            <td>
+                <h2>    Получение RSS    </h2>
+            </td>
+            <td class="fixed">
+            </td>
+        </tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr>
+            <td></td>
+            <td>
 
-    <form action="/download" method="GET">
-        <input name="filename" id="filename" th:value="${filename}"/>
-        <button> Скачать </button>
-    </form>
-    </p>
-    <p>
-        <span th:text = "${filename}"/>
+                <p>
+                    Скачивание подкаста
+                </p>
+                <p>
 
-    <form action="/delete" method="DELETE">
-        <input name="filename" id="filename" th:value="${filename}"/>
-        <button> Очистить файл из кэша </button>
-    </form>
-    </p>
+                    <span th:text = "${filename}"/>
+
+                    <form action="/download" method="GET">
+                        <input name="filename" id="filename" th:value="${filename}"/>
+                        <button> Скачать </button>
+                    </form>
+                </p>
+                <p>
+                    <span th:text = "${filename}"/>
+
+                    <form action="/delete" method="DELETE">
+                        <input name="filename" id="filename" th:value="${filename}"/>
+                        <button> Очистить файл из кэша </button>
+                    </form>
+
+                </p>
+
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+
 </div>
 </body>
 </html>
