@@ -11,7 +11,7 @@ import java.net.*;
 
 public class RssFetcher {
 
-    static private int TIME_OUT_MILLIS = 3000;
+    static private int TIME_OUT_MILLIS = 5000;
 
     public static String getPage(String url) {
 
