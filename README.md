@@ -7,3 +7,6 @@ ____________
 ```html
 https://mavecloud.s3mts.ru/storage/feeds/37827.xml
 ```
+
+Исполняемый .jar на сервере настроен работать с временной папкой "downloads",
+изменен порт.
