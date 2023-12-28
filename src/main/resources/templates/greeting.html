@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RSS-podcast треккер</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h2>   RSS-подкаст-треккер     </h2>
+<div>
+    <p>
+        Введите URL на RSS
+    <form action="/rss" method="POST">
+        <span th:text = "${greeting}"/>
+        <input name="url" id="url" />
+        <button>Прочитать RSS</button>
+    </form>
+    </p>
+</div>
+</body>
+</html>

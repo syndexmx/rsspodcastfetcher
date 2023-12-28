@@ -1,0 +1,22 @@
+package com.github.syndexmx.rsspodcastfetcher.externalwebservice;
+
+
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.net.URL;
+
+import static com.github.syndexmx.rsspodcastfetcher.services.FileNameTransformer.makeUrlIntoFilename;
+
+public class FileFetcher {
+
+    public static void fetchFile(String url){
+        try {
+            FileUtils.copyURLToFile(
+                    new URL(url), new File(makeUrlIntoFilename(url)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}

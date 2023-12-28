@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Скачивание подкаста</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h2>   Скачивание подкаста     </h2>
+<div>
+    <p>
+        <span th:text = "${filename}"/>
+
+    <form action="/download" method="GET">
+        <input name="filename" id="filename" th:value="${filename}"/>
+        <button>Скачать</button>
+    </form>
+    </p>
+</div>
+</body>
+</html>

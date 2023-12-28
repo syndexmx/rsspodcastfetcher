@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Импорт RSS</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h2>   RSS-подкаст-треккер     </h2>
+<div>
+    <table>
+        <tr th:each="podcast : ${podcastlist}">
+            <td>
+                <form action="/acquire" method="GET" target="downloadwindow">
+                    <p>
+                        <button> GET </button>
+                        <span th:text="${podcast.title}"/>
+                    </p>
+                    <p>
+                        <span th:text="${podcast.date}"/>
+                        <input th:value="${podcast.url}" name="url" class="noinput">
+                    </p>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
