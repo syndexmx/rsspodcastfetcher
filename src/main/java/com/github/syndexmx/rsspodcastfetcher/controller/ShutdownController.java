@@ -19,9 +19,11 @@ public class ShutdownController {
 
     @PostMapping("/shutdown")
     public String askForShutdown(@RequestParam String key, Model model){
-        if (key.equals(SHUTDOWN_KEY))
+        if (key.equals(SHUTDOWN_KEY)){
             System.exit(0);
-        model.addAttribute("key", "key");
+        } else {
+            model.addAttribute("key", "key");
+        }
         return "shutdown";
     }
 
