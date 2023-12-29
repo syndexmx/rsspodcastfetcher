@@ -14,6 +14,7 @@
             </td>
             <td colspan="2" class="centered">
                 <h2 class="centered">   Подкасты выбранного канала     </h2>
+                <img src="images/rss40x40.png"/>
                 <span th:text="${channelname}"/>
             </td>
             <td class="fixed">
@@ -44,6 +45,7 @@
                     </p>
                     <p>
                         <button> Получить подкаст </button>
+                        <img src="images/radio30x40.png"/>
                         <span th:text="${podcast.date}"/>
                     </p>
                     <p>
@@ -52,7 +54,7 @@
 
                 </td>
                 <td>
-                    <input th:value="${podcast.url}" name="url" class="noinput">
+                    <input th:value="${podcast.url}" name="url" style="display: none;">
                 </td>
                 <td>
                 </td>

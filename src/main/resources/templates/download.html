@@ -33,13 +33,15 @@
                     <form action="/download" method="GET">
                         <input name="filename" id="filename" th:value="${filename}"/>
                         <button> Скачать </button>
+                        <img src="images/downloadfile40x40.png"/>
                     </form>
+
                 </p>
                 <p>
-                    <span th:text = "${filename}"/>
+                    Очистка подготовленного файла из кэша после скачивания
 
-                    <form action="/delete" method="DELETE">
-                        <input name="filename" id="filename" th:value="${filename}"/>
+                <form action="/delete" method="DELETE">
+                        <input name="filename" id="filename" th:value="${filename}" style="display: none;"/>
                         <button> Очистить файл из кэша </button>
                     </form>
 
