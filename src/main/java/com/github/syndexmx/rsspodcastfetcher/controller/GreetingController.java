@@ -13,7 +13,7 @@ public class GreetingController {
 
     @GetMapping("")
     public String showGreetingPage(Model model){
-        model.addAttribute("greeting", "Введите url");
+        model.addAttribute("greeting", "");
         return "greeting";
     }
 

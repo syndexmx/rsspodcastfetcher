@@ -25,10 +25,11 @@
 
                 <p>
                     Вставьте ссылку на RSS интересующего Вас канала
+                    <span th:text = "${greeting}"/>
                 </p>
                 <p>
                     <form action="/rss" method="POST">
-                        <span th:text = "${greeting}"/>
+                        <img src="images/rss40x40.png"/>
                         <input name="url" id="url" />
                         <button>Прочитать RSS</button>
                     </form>
