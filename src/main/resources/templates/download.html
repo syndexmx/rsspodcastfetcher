@@ -40,10 +40,11 @@
                 <p>
                     Очистка подготовленного файла из кэша после скачивания
 
-                <form action="/delete" method="DELETE">
-                        <input name="filename" id="filename" th:value="${filename}" style="display: none;"/>
-                        <button> Очистить файл из кэша </button>
-                    </form>
+                <form action="/delete" method="POST">
+                    <input name="filename" id="filename" th:value="${filename}" type="hidden"/>
+                    <input name="_methode" id="_methode" value="DELETE" type="hidden"/>
+                    <button> Очистить файл из кэша </button>
+                </form>
 
                 </p>
 
