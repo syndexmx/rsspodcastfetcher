@@ -11,7 +11,7 @@
 <div>
     <p>
         Чтобы очистить кэш, введите ключ
-    <form action="/deletecachefiles" method="DELETE">
+    <form action="/deletecachefiles" th:method="DELETE">
         <span th:text = "${key}"/>
         <input name="key" id="key" />
         <button>Очистить</button>
