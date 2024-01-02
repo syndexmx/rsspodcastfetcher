@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class ShutdownController {
 
     private String SHUTDOWN_KEY = "00qp-M991";
+    // TODO : Ввести причичное адсминистрирование
 
 
     @GetMapping("/shutdown")
