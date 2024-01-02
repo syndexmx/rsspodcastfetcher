@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class GreetingController {
 
+    //TODO : Ввести аутентификацию
 
     @GetMapping("")
     public String showGreetingPage(Model model){

@@ -11,6 +11,7 @@ import java.io.File;
 public class ClearCacheController {
 
     private String CLEARCACHE_KEY = "00W1";
+    // TODO : Ввести причичное адсминистрирование
 
     @GetMapping
     @RequestMapping(value = "/clearcache")
