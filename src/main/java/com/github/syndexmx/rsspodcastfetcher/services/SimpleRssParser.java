@@ -9,7 +9,7 @@ import java.util.List;
 import static com.github.syndexmx.rsspodcastfetcher.dto.PodcastUrl.DESCRIPTION_LENGTH_LIMIT;
 
 @Component
-public class SimpleRSSParser implements RSSParser {
+public class SimpleRssParser implements RssParser {
 
     @Override
     public List<PodcastUrl> parseRss(String rssText) {
@@ -47,16 +47,16 @@ public class SimpleRSSParser implements RSSParser {
         return title;
     }
 
-    private String getDescriptionFromBlock(String aBlock){
+    private String getDescriptionFromBlock(String aBlock) {
         if (!aBlock.contains("<description>") | !aBlock.contains("<description>"))
             return "";
-        String description = aBlock.substring(aBlock.indexOf("<description>")+12);
+        String description = aBlock.substring(aBlock.indexOf("<description>") + 12);
         description = description.substring(0, description.indexOf("</description>"));
         description = description.replace('"','*');
         description = description.replace("<p>","\n");
         description = description.replace("</p>","\n");
         if (description.contains("[") && description.contains("]")){
-            description = description.substring(description.lastIndexOf("[")+1);
+            description = description.substring(description.lastIndexOf("[") + 1);
             description = description.substring(0,description.indexOf("]"));
         }
         if (description.length()>PodcastUrl.DESCRIPTION_LENGTH_LIMIT){
@@ -65,13 +65,13 @@ public class SimpleRSSParser implements RSSParser {
         return description;
     }
 
-    private String getUrlFromBlock(String aBlock){
-        String link = aBlock.substring(aBlock.indexOf("url=\"")+5);
+    private String getUrlFromBlock(String aBlock) {
+        String link = aBlock.substring(aBlock.indexOf("url=\"") + 5);
         link = link.substring(0, link.indexOf("\""));
         return link;
     }
 
-    private String getDateFromBlock(String aBlock){
+    private String getDateFromBlock(String aBlock) {
         String date = "";
         if (aBlock.contains("<pubDate>")) {
             date = aBlock.substring(aBlock.indexOf("<pubDate>") + 9);
@@ -79,5 +79,4 @@ public class SimpleRSSParser implements RSSParser {
         }
         return date;
     }
-
 }

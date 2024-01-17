@@ -13,13 +13,13 @@ public class ShutdownController {
 
 
     @GetMapping("/shutdown")
-    public String showShutdownPage(Model model){
+    public String showShutdownPage(Model model) {
         model.addAttribute("key", "key");
         return "shutdown";
     }
 
     @PostMapping("/shutdown")
-    public String askForShutdown(@RequestParam String key, Model model){
+    public String askForShutdown(@RequestParam String key, Model model) {
         if (key.equals(SHUTDOWN_KEY)){
             System.exit(0);
         } else {
@@ -27,5 +27,4 @@ public class ShutdownController {
         }
         return "shutdown";
     }
-
 }

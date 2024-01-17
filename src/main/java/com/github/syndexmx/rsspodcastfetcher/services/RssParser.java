@@ -4,8 +4,7 @@ import com.github.syndexmx.rsspodcastfetcher.dto.PodcastUrl;
 
 import java.util.List;
 
-public interface RSSParser {
+public interface RssParser {
 
     List<PodcastUrl> parseRss(String string);
-
 }

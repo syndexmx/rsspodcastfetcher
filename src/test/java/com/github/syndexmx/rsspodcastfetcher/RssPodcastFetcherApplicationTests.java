@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RsspodcastfetcherApplicationTests {
+class RssPodcastFetcherApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }

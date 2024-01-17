@@ -26,7 +26,8 @@ import static com.github.syndexmx.rsspodcastfetcher.services.FileNameTransformer
 @RequestMapping
 public class DownloadController {
 
-    private byte[] ERROR_MESSAGE_BYTE_ARRAY = {(byte)'E',(byte)'r',(byte)'r',(byte)'o',(byte)'r',(byte)'!'} ;
+    private byte[] ERROR_MESSAGE_BYTE_ARRAY = {(byte)'E', (byte)'r', (byte)'r', (byte)'o',
+            (byte)'r',(byte)'!'} ;
 
     @GetMapping
     @RequestMapping(value = "/download")
@@ -43,7 +44,7 @@ public class DownloadController {
 
     @DeleteMapping
     @RequestMapping(value = "/delete")
-    public String showImportRSSPage(@RequestParam String filename, Model model){
+    public String showImportRSSPage(@RequestParam String filename, Model model) {
         try {
             Files.deleteIfExists(Paths.get( urlToSubpathFilename(filename)  ));
         } catch (IOException e) {
@@ -52,5 +53,4 @@ public class DownloadController {
         model.addAttribute("filename", filename);
         return "deleted";
     }
-
 }

@@ -12,7 +12,7 @@ import static com.github.syndexmx.rsspodcastfetcher.services.FileNameTransformer
 public class FileFetcher {
 
 
-    public static void fetchFile(String url){
+    public static void fetchFile(String url) {
         try {
             FileUtils.copyURLToFile(
                     new URL(url), new File( urlToSubpathFilename(url)));

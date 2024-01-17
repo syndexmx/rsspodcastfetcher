@@ -3,7 +3,7 @@ package com.github.syndexmx.rsspodcastfetcher.controller;
 
 import com.github.syndexmx.rsspodcastfetcher.dto.PodcastUrl;
 import com.github.syndexmx.rsspodcastfetcher.externalwebservice.RssFetcher;
-import com.github.syndexmx.rsspodcastfetcher.services.RSSParser;
+import com.github.syndexmx.rsspodcastfetcher.services.RssParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,16 +16,14 @@ import java.util.List;
 public class RssImportController {
 
     @Autowired
-    RSSParser rssParser;
+    RssParser rssParser;
 
     @PostMapping("/rss")
-    public String showImportRSSPage(@RequestParam String url, Model model){
+    public String showImportRSSPage(@RequestParam String url, Model model) {
         String rssText = RssFetcher.getPage(url);
         List<PodcastUrl> listOfUrls = rssParser.parseRss(rssText);
         model.addAttribute("channelname", url);
         model.addAttribute("podcastlist", listOfUrls);
         return "parsedrss";
     }
-
-
 }

@@ -15,7 +15,7 @@ public class ClearCacheController {
 
     @GetMapping
     @RequestMapping(value = "/clearcache")
-    public String showClearCachePage(Model model){
+    public String showClearCachePage(Model model) {
         model.addAttribute("key", "key");
         return "clearcache";
     }
@@ -32,5 +32,4 @@ public class ClearCacheController {
         }
         return "deleted";
     }
-
 }
