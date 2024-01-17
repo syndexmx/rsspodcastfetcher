@@ -3,7 +3,7 @@ import java.io.Serializable;
 
 public class PodcastUrl implements Serializable {
 
-    public static int DESCRIPTION_LENGTH_LIMIT=400;
+    public static int DESCRIPTION_LENGTH_LIMIT = 400;
 
     public String url;
     public String title;

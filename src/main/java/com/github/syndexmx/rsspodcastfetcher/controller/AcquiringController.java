@@ -13,9 +13,8 @@ import static com.github.syndexmx.rsspodcastfetcher.services.FileNameTransformer
 @RequestMapping
 public class AcquiringController {
 
-
     @GetMapping("/acquire")
-    public String acquireFile(@RequestParam String url, Model model){
+    public String acquireFile(@RequestParam String url, Model model) {
         String string = makeUrlIntoFilename(url);
         model.addAttribute("filename", string);
         fetchFile(url);

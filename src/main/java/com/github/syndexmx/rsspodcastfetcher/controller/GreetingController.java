@@ -13,10 +13,8 @@ public class GreetingController {
     //TODO : Ввести аутентификацию
 
     @GetMapping("")
-    public String showGreetingPage(Model model){
+    public String showGreetingPage(Model model) {
         model.addAttribute("greeting", "");
         return "greeting";
     }
-
-
 }
