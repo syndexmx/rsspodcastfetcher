@@ -32,3 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 /out/artifacts/rsspodcastfetcher_jar/rsspodcastfetcher.jar
+
+### Properties ###
+/src/main/resources/application.properties
