@@ -1,6 +1,7 @@
-package com.github.syndexmx.rsspodcastfetcher.services;
+package com.github.syndexmx.rsspodcastfetcher.services.Impl;
 
 import com.github.syndexmx.rsspodcastfetcher.dto.PodcastUrl;
+import com.github.syndexmx.rsspodcastfetcher.services.RssParser;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
