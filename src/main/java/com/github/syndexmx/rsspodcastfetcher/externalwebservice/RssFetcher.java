@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 public class RssFetcher {
 
@@ -20,7 +21,7 @@ public class RssFetcher {
             URLConnection connection = website.openConnection();
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(
-                            connection.getInputStream(), "UTF-8"));
+                            connection.getInputStream(), StandardCharsets.UTF_8));
 
             StringBuilder response = new StringBuilder();
             String inputLine;
